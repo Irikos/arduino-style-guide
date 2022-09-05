@@ -1,11 +1,14 @@
 # Style guide for Arduino (work in progress)
 *Created for students, hopefully useful for everybody*
 
-This is a Arduino coding style guide, spurred from the lack of a comprehensive guide available on the internet. 
+> Code is read more often than it is written. (Guido Van Rossum, creator of Python)
+
+Arduino coding style guide, spurred from the lack of a comprehensive guide available on the internet and from the need to actually convince students to write their projects using more readable code and better practices.
+
 
 Remember that a guide is just that, a guide. While some of the recommendation here are fundamental good practices, and it is highly recommended that you respect them, others are open to personal preferences. 
 
-The current guide uses many sources for inspiration: from shamelessly copying (parts of) forum and blog posts with useful practices, to copying the style of other coding guides. These have all been referenced in [References](#references). If I have missed anyone it is purely by mistake. Submit a PR and I will gladly adopt it.
+The current guide uses many sources for inspiration: from shamelessly copying (parts of) forum and blog posts with useful practices, to imitating the style of other coding guides. These have all been referenced in [References](#references). If I have missed anyone it is purely by mistake. Submit a PR and I will gladly adopt it.
 
 Lastly, a style guide is a living document. It must constantly adapt to newer norms, technologies and techniques. The basis of any guide is its community. If you find this guide useful, please share it with other friends. If you notice a mistake or have updates to contribute, please submit a PR so that it can be adopted.
 Check [Contributors](#contributors) to see a list of all the people that helped out.
