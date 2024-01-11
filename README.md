@@ -54,7 +54,7 @@ Guide or not, remember that consistency in code is of utmost importance. So, des
 
 **[⬆ back to top](#table-of-contents)**
 
-## 2. Project-structure
+## 3. Project-structure
 Your code should explain itself, or use comments to do the same. Unless absolutely necessary, do not obfuscate your code for little gain in performance. 
 - Start the project with a general comment that explain what the file (project) does
     > Why? So the reader gets a general understanding of the program early on
@@ -111,7 +111,7 @@ Your code should explain itself, or use comments to do the same. Unless absolute
 **[⬆ back to top](#table-of-contents)**
 
 
-## 3. Comments
+## 4. Comments
 - Comment constants and variables whose usage are not obvious from the name
 - Comment every code block. Do it before the block, such that the reader knows what's coming.
 - Comment the foor loop
@@ -134,6 +134,23 @@ Your code should explain itself, or use comments to do the same. Unless absolute
     }
 ```
 
+### 5. Working with Serial
+#### 5.1 Reading too much from Serial.available()
+
+If Serial.available () returns non-zero, you know have at least one byte. Trying to read two bytes is wrong, unless you specifically test for at least two.
+``` arduino
+// Bad
+if (Serial.available()) {
+    byte a = Serial.read();
+    byte b = Serial.read();
+}
+
+// Potentially good
+while (Serial.available()) {
+    byte incomingByte = Serial.read();
+    // do stuff with it
+}
+```
 
 **[⬆ back to top](#table-of-contents)**
 
