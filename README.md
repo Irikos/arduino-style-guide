@@ -152,6 +152,20 @@ while (Serial.available()) {
 }
 ```
 
+### 6. Working with pins
+#### 6.1 Trying to work "on a set"
+While the first code will compile, it will only set the first pin to HIGH
+```arduino
+// Bad
+digitalWrite((9, 10, 11), HIGH);
+
+// Good
+digitalWrite(9, HIGH);
+digitalWrite(10, HIGH);
+digitalWrite(11, HIGH);
+// (you should have a constant for each pin, though)
+```
+
 **[⬆ back to top](#table-of-contents)**
 
 ##
