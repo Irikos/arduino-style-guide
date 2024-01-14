@@ -15,19 +15,19 @@ Check [Contributors](#contributors) to see a list of all the people that helped 
 
 ## Table of contents
 1. [Consistency](#consistency)
-1. [Project structure](#project-structure)
+1. [Naming conventions](#naming-conventions)
 1. [References](#references)
-1. [Other style guides](#coding-guides)
+1. [Other style guides](#other-style-guides)
 1. [Contributors](#contributors)
 
-## 1. Consistency
+## Consistency
 > Consistency is more important than which convention is used.
 
 Guide or not, remember that consistency in code is of utmost importance. So, despite this guide (or other), use the same style in your code. If joining an already existing project, adapt to the coding style used there, and be consistent. Where possible, refactor early when you notice inconsistency in a project, but **be 100% sure** that you won't ruin any compatibilities.
 
 **[⬆ back to top](#table-of-contents)**
 
-## 2. Naming conventions
+## Naming conventions
 - Use descriptive, meaningful names for variables and functions. Avoid using short, generic names like "temp" or "count".
     > Why? Generic short names do not accurately reflect the purpose of the variable of function.
     ```arduino
@@ -54,7 +54,7 @@ Guide or not, remember that consistency in code is of utmost importance. So, des
 
 **[⬆ back to top](#table-of-contents)**
 
-## 3. Project-structure
+## Project-structure
 Your code should explain itself, or use comments to do the same. Unless absolutely necessary, do not obfuscate your code for little gain in performance. 
 - Start the project with a general comment that explain what the file (project) does
     > Why? So the reader gets a general understanding of the program early on
@@ -111,7 +111,7 @@ Your code should explain itself, or use comments to do the same. Unless absolute
 **[⬆ back to top](#table-of-contents)**
 
 
-## 4. Comments
+## Comments
 - Comment constants and variables whose usage are not obvious from the name
 - Comment every code block. Do it before the block, such that the reader knows what's coming.
 - Comment the foor loop
@@ -134,8 +134,8 @@ Your code should explain itself, or use comments to do the same. Unless absolute
     }
 ```
 
-### 5. Working with Serial
-#### 5.1 Reading too much from Serial.available()
+## Working with Serial
+### Reading too much from Serial.available()
 
 If Serial.available () returns non-zero, you know have at least one byte. Trying to read two bytes is wrong, unless you specifically test for at least two.
 ``` arduino
@@ -152,8 +152,8 @@ while (Serial.available()) {
 }
 ```
 
-### 6. Working with pins
-#### 6.1 Trying to work "on a set"
+## Working with pins
+### Trying to work "on a set"
 While the first code will compile, it will only set the first pin to HIGH
 ```arduino
 // Bad
@@ -175,7 +175,7 @@ References go here
 
 **[⬆ back to top](#table-of-contents)**
 
-## Other-coding-guides
+## Other style guides
 Other coding guides, used for inspiration or just plain useful
 - [C Coding Standard](https://users.ece.cmu.edu/~eno/coding/CCodingStandard.html)
 - [Python PEP-8](https://peps.python.org/pep-0008/)
