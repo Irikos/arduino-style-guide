@@ -31,9 +31,9 @@ Guide or not, remember that consistency in code is of utmost importance. So, des
 - Use descriptive, meaningful names for variables and functions. Avoid using short, generic names like "temp" or "count".
     > Why? Generic short names do not accurately reflect the purpose of the variable of function.
     ```arduino
-    # Good:
-    int temperature = 0;
-    int counter = 0;
+    // Good:
+    int waterTemperature = 0;
+    int buttonPressCounter = 0;
     ...
     void readTemperature() {
         // do stuff
@@ -41,7 +41,7 @@ Guide or not, remember that consistency in code is of utmost importance. So, des
     ```
 
     ```arduino
-    # Bad:
+    // Bad:
     int temp = 0;
     int count = 0;
     ...
@@ -70,7 +70,7 @@ Your code should explain itself, or use comments to do the same. Unless absolute
 
 
     ```arduino
-    # potentially good
+    // Potentially good
     /*
         Sketch title
 
@@ -118,13 +118,7 @@ Your code should explain itself, or use comments to do the same. Unless absolute
 - Do not write comments that are obvious from the code block name
 
 ``` arduino
-    # bad
-    // write the number
-    void writeNumber(byte number) {
-        // do stuff
-    }
-
-    # potentially good
+    // Potentially good
     /* 
     Displays the number on the 7 segment display. 
     Number can be between 0 and 9.
@@ -134,17 +128,19 @@ Your code should explain itself, or use comments to do the same. Unless absolute
     }
 ```
 
+``` arduino
+    // Bad
+    // write the number
+    void writeNumber(byte number) {
+        // do stuff
+    }
+```
+
 ## Working with Serial
 ### Reading too much from Serial.available()
 
 If Serial.available () returns non-zero, you know have at least one byte. Trying to read two bytes is wrong, unless you specifically test for at least two.
-``` arduino
-// Bad
-if (Serial.available()) {
-    byte a = Serial.read();
-    byte b = Serial.read();
-}
-
+```arduino
 // Potentially good
 while (Serial.available()) {
     byte incomingByte = Serial.read();
@@ -152,18 +148,29 @@ while (Serial.available()) {
 }
 ```
 
+``` arduino
+// Bad
+if (Serial.available()) {
+    byte a = Serial.read();
+    byte b = Serial.read();
+}
+```
+
 ## Working with pins
 ### Trying to work "on a set"
-While the first code will compile, it will only set the first pin to HIGH
-```arduino
-// Bad
-digitalWrite((9, 10, 11), HIGH);
 
+```arduino
 // Good
 digitalWrite(9, HIGH);
 digitalWrite(10, HIGH);
 digitalWrite(11, HIGH);
 // (you should have a constant for each pin, though)
+```
+
+While the first code will compile, it will only set the first pin to HIGH.
+```arduino
+// Bad
+digitalWrite((9, 10, 11), HIGH);
 ```
 
 **[⬆ back to top](#table-of-contents)**
