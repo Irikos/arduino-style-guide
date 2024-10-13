@@ -164,7 +164,7 @@ if (Serial.available()) {
 digitalWrite(9, HIGH);
 digitalWrite(10, HIGH);
 digitalWrite(11, HIGH);
-// (you should have a constant for each pin, though)
+// (you should use a constant instead of the direct pin value, though)
 ```
 
 While the first code will compile, it will only set the first pin to HIGH.
