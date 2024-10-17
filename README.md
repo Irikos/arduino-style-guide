@@ -115,7 +115,8 @@ Your code should explain itself, or use comments to do the same. Unless absolute
 - Comment constants and variables whose usage are not obvious from the name
 - Comment every code block. Do it before the block, such that the reader knows what's coming.
 - Comment the foor loop
-- Do not write comments that are obvious from the code block name
+
+### Do not write comments that are obvious from the code block name
 
 ``` arduino
     // Potentially good
@@ -135,6 +136,35 @@ Your code should explain itself, or use comments to do the same. Unless absolute
         // do stuff
     }
 ```
+
+### Use "/* details */" for multi-line comments as opposed to just "// details"
+
+``` arduino
+    // Potentially good
+    
+    /* 
+    Here I have information
+    Regarding the input number
+    and te decimal point 
+    expressed on multiple lines
+    */
+    void writeNumber(byte number, byte decimalPoint) {
+        // do stuff
+    }
+```
+
+``` arduino
+    // Bad
+
+    // Here I have information
+    // Regarding the input number
+    // and te decimal point
+    // expressed on multiple lines
+    void writeNumber(byte number, byte decimalPoint) {
+        // do stuff
+    }
+```
+
 
 ## Working with Serial
 ### Reading too much from Serial.available()
